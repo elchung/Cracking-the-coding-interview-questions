@@ -1,0 +1,24 @@
+'''given a string, write a function to check if it is a permutation of a palindrome. A palindrome is a word or phrase that is the same forwards and backwards. A permutation is a rearrangement of letters. the palindrome does not need to be limited to just dictionary words
+	ex: in: Tact Coa
+	output:	True: (Permutations: "taco cat", "atco cta", etc.)
+'''
+
+def palindrome_permutation(word):
+    counter = {}
+    odd_found = False
+    
+    for c in word:
+        if c not in counter:
+            counter[c] = 0
+        else:
+            counter[c] += 1
+            
+    #has to be only 1 odd number of things
+    for c in counter:
+        if counter[c] % 2 != 0:
+            if odd_cound:
+                return False
+            else:
+                odd_found = False
+    return True
+    
